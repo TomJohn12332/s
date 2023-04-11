@@ -1,0 +1,729 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Trigonometry</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="231a450a-0a6f-4714-b07f-53d09ed369f4" class="page sans"><header><h1 class="page-title">Trigonometry</h1></header><div class="page-body"><p id="736ffeb8-804c-4b43-82bd-73582372f3bb" class="">
+</p><p id="794f806a-126c-482e-94e5-211219ddf48c" class="">Sakha simply</p><p id="e58ba1b6-cba0-457f-8033-601be1e96823" class="">In physics and engineering, trigonometric functions like cotangent are often used to describe and analyze real-world phenomena, including the behavior of waves, oscillations, and the relationship between forces and motion.</p><p id="000e0d04-9e31-4982-a43b-6836239c4f43" class="">
+</p><p id="9c092231-2ec2-4ad0-93d6-658f5a5139ee" class="">So, the mediators for this Physics are 1. Waves </p><ol type="1" id="070168bf-f3d3-48c7-9246-ff081bafca4a" class="numbered-list" start="2"><li>Oscillations </li></ol><ol type="1" id="6d5b4f21-19ec-4097-a31e-5dd5a369a2e7" class="numbered-list" start="3"><li>Forces &amp; Motion<p id="a02ce253-4a96-4c85-8b21-86bc5b54d9e8" class="">
+</p><blockquote id="360c8652-7733-4b7f-a368-b3a37445dbb7" class="">The concept of cot(45 degrees) = 1 is not a physical entity that exists in reality, but it is a useful mathematical tool</blockquote><p id="3472e42e-b78f-4210-97a6-f968420a3cef" class="">
+</p><figure id="6936dbd7-a2e4-4795-96f3-29e79e2be6db" class="image"><a href="Trigonometry%20231a450a0a6f4714b07f53d09ed369f4/Screenshot_2023-04-10_at_10.27.39_AM.png"><img style="width:480px" src="Trigonometry%20231a450a0a6f4714b07f53d09ed369f4/Screenshot_2023-04-10_at_10.27.39_AM.png"/></a></figure><p id="af8bd746-3953-4c14-ba65-c93ccb771880" class="">
+</p><p id="d7f6068b-4114-43b4-84e6-ba61f1b4da29" class="">Okay. But how to solve this? Like tan 225degree or other related same mathematical problems fast, is there any trick?</p><p id="485f10a8-ed12-4f65-b0b8-3683bd3311c5" class="">
+</p><p id="c0f11a89-f1c9-47d1-96eb-4858c6600835" class="">Here, it is </p><p id="8af1527b-559a-4745-acd8-9dfbcf333ace" class="">
+</p><p id="cf83b51f-ce17-41aa-9b3c-8f710e6be72c" class="">In any trigonometry matter. </p><p id="da122d72-79bd-4115-9fd0-010cbd09c448" class="">Object = Right-angled triangle (Thats why that Cartesian is used)</p><p id="181525bf-1006-4cfb-aa36-d67091dbbdd3" class="">
+Shape = The geometric structure that is bounded by the sides and angles of the right-angled triangle</p><p id="30292bff-2c1a-4069-ad04-bc85eed8fa0f" class="">
+Concept = The relationships between the angles and sides of the triangle, as described by trigonometric functions like the cotangent function.</p><p id="ac5df78d-aa06-46fd-b097-63326fed97de" class="">
+</p><p id="4aebd7a7-e2c3-4220-a21c-9b0ef1adb749" class="">In the context of the problem involving cot(225), we can think of the right-angled triangle as the object, with a shape defined by its sides and angles.</p><p id="9e6187d8-2203-412f-86a0-b1de820ed36e" class="">
+</p><figure id="12849186-86db-481a-bece-72296de0a010" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>T</mi><mi>h</mi><mi>e</mi><mi>m</mi><mi>e</mi><mi>d</mi><mi>i</mi><mi>a</mi><mi>t</mi><mi>o</mi><mi>r</mi><mi>h</mi><mi>e</mi><mi>r</mi><mi>e</mi><mi>i</mi><mi>s</mi><mi>t</mi><mi>h</mi><mi>a</mi><mi>t</mi><mi>c</mi><mi>a</mi><mi>r</mi><mi>t</mi><mi>e</mi><mi>s</mi><mi>i</mi><mi>a</mi><mi>n</mi><mi>s</mi><mi>y</mi><mi>s</mi><mi>t</mi><mi>e</mi><mi>m</mi><mi>w</mi><mi>h</mi><mi>e</mi><mi>r</mi><mi>e</mi><mi>i</mi><mi>t</mi><mi>i</mi><mi>s</mi><mi>i</mi><mi>n</mi><mn>90</mn><mi>d</mi><mi>e</mi><mi>g</mi><mi>r</mi><mi>e</mi><mi>e</mi><mo stretchy="false">(</mo><mi>O</mi><mi>b</mi><mi>j</mi><mi>e</mi><mi>c</mi><mi>t</mi><mi>i</mi><mi mathvariant="normal">.</mi><mi>e</mi><mi>A</mi><mi>b</mi><mi>s</mi><mi>t</mi><mi>r</mi><mi>a</mi><mi>c</mi><mi>t</mi><mi>o</mi><mi>b</mi><mi>j</mi><mi>e</mi><mi>c</mi><mi>t</mi><mo stretchy="false">)</mo><mi>a</mi><mi>n</mi><mi>d</mi><mi>i</mi><mi>t</mi><mi>s</mi><mo stretchy="false">(</mo><mi>c</mi><mi>o</mi><mi>n</mi><mi>c</mi><mi>e</mi><mi>p</mi><mi>t</mi><mi>s</mi><mi>l</mi><mi>i</mi><mi>k</mi><mi>e</mi><mo stretchy="false">)</mo><mi>A</mi><mi>S</mi><mi>T</mi><mi>C</mi><mi>r</mi><mi>u</mi><mi>l</mi><mi>e</mi><mi>a</mi><mi>n</mi><mi>d</mi><mi>r</mi><mi>e</mi><mi>f</mi><mi>e</mi><mi>r</mi><mi>e</mi><mi>n</mi><mi>c</mi><mi>e</mi><mi>a</mi><mi>n</mi><mi>g</mi><mi>l</mi><mi>e</mi><mi>s</mi><mo stretchy="false">(</mo><mi>l</mi><mi>i</mi><mi>k</mi><mi>e</mi><mn>180</mn><mi>d</mi><mi>e</mi><mi>g</mi><mi>r</mi><mi>e</mi><mi>e</mi><mo separator="true">,</mo><mn>360</mn><mo separator="true">,</mo><mn>270</mn><mo separator="true">,</mo><mn>90</mn><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi><mi>I</mi><mi>t</mi><mi>s</mi><mi>b</mi><mi>e</mi><mi>s</mi><mi>t</mi><mi>t</mi><mi>o</mi><mi>t</mi><mi>a</mi><mi>k</mi><mi>e</mi><mi>a</mi><mi>l</mi><mi>w</mi><mi>a</mi><mi>y</mi><mi>s</mi><mi>E</mi><mi>V</mi><mi>E</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">The mediator here is that cartesian system where it is in 90 degree (Object i.e Abstract object) and its (concepts like) ASTC rule and reference angles (like 180 degree, 360, 270, 90) . Its best to take always EVEN</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal">h</span><span class="mord mathnormal">e</span><span class="mord mathnormal">m</span><span class="mord mathnormal">e</span><span class="mord mathnormal">d</span><span class="mord mathnormal">ia</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.02778em;">or</span><span class="mord mathnormal">h</span><span class="mord mathnormal">ere</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">t</span><span class="mord mathnormal">ha</span><span class="mord mathnormal">t</span><span class="mord mathnormal">c</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">t</span><span class="mord mathnormal">es</span><span class="mord mathnormal">ian</span><span class="mord mathnormal">sys</span><span class="mord mathnormal">t</span><span class="mord mathnormal">e</span><span class="mord mathnormal">m</span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mord mathnormal">h</span><span class="mord mathnormal">ere</span><span class="mord mathnormal">i</span><span class="mord mathnormal">t</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">in</span><span class="mord">90</span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">ree</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mord mathnormal" style="margin-right:0.05724em;">bj</span><span class="mord mathnormal">ec</span><span class="mord mathnormal">t</span><span class="mord mathnormal">i</span><span class="mord">.</span><span class="mord mathnormal">e</span><span class="mord mathnormal">A</span><span class="mord mathnormal">b</span><span class="mord mathnormal">s</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal">c</span><span class="mord mathnormal">t</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.05724em;">bj</span><span class="mord mathnormal">ec</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mord mathnormal">an</span><span class="mord mathnormal">d</span><span class="mord mathnormal">i</span><span class="mord mathnormal">t</span><span class="mord mathnormal">s</span><span class="mopen">(</span><span class="mord mathnormal">co</span><span class="mord mathnormal">n</span><span class="mord mathnormal">ce</span><span class="mord mathnormal">pt</span><span class="mord mathnormal">s</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal" style="margin-right:0.03148em;">ik</span><span class="mord mathnormal">e</span><span class="mclose">)</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.07153em;">STC</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">e</span><span class="mord mathnormal">an</span><span class="mord mathnormal">d</span><span class="mord mathnormal">re</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">ere</span><span class="mord mathnormal">n</span><span class="mord mathnormal">ce</span><span class="mord mathnormal">an</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">es</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal" style="margin-right:0.03148em;">ik</span><span class="mord mathnormal">e</span><span class="mord">180</span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">ree</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">360</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">270</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">90</span><span class="mclose">)</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal">t</span><span class="mord mathnormal">s</span><span class="mord mathnormal">b</span><span class="mord mathnormal">es</span><span class="mord mathnormal">tt</span><span class="mord mathnormal">o</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.03148em;">ak</span><span class="mord mathnormal">e</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.02691em;">lw</span><span class="mord mathnormal">a</span><span class="mord mathnormal">ys</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord mathnormal" style="margin-right:0.10903em;">EN</span></span></span></span></span></div></figure><p id="c030733e-db41-460e-86cf-3abe25d86505" class="">
+</p><figure id="d8aa7ed6-62fd-4d1c-96e5-9f44ccad3500" class="image"><a href="Trigonometry%20231a450a0a6f4714b07f53d09ed369f4/Screenshot_2023-04-10_at_10.42.16_AM.png"><img style="width:1396px" src="Trigonometry%20231a450a0a6f4714b07f53d09ed369f4/Screenshot_2023-04-10_at_10.42.16_AM.png"/></a></figure><p id="b60e84e2-22c5-477f-aa43-3045549ade3a" class="">
+</p><p id="4a36fbcf-3979-4d82-a90b-a97d2e0331a5" class="">
+</p><p id="d66bee61-0eda-484f-a67f-25650b09b53a" class="">Ahh, again the steps should be </p><p id="d3a254be-a7de-4417-95e3-a3d45d743bc9" class="">
+</p><ol type="1" id="7256ad81-bcbc-44ce-aafd-377d47003d64" class="numbered-list" start="1"><li>Conceptualize the question (Concept)</li></ol><ol type="1" id="4ab057b1-fb73-47db-b163-57f06defefd8" class="numbered-list" start="2"><li>Take EVEN reference (Concept)</li></ol><ol type="1" id="97385cda-315c-47c1-97bf-2e527447ce33" class="numbered-list" start="3"><li>Apply ASTIC rule (Concept)</li></ol><ol type="1" id="f1a608fd-5229-4986-b334-408bef838ee9" class="numbered-list" start="4"><li>Get the answer </li></ol><p id="16e0c71c-2714-40b9-8b7f-b5a27f5c8858" class="">
+</p><p id="794c5b4f-7746-4396-b26f-0fe3e27e4d5f" class="">In the context of the scientific method, we can restructure the steps to solve trigonometric problems involving angles like 225 degrees as follows:</p><ol type="1" id="3cb1f509-803a-4751-9997-224b966eac68" class="numbered-list" start="1"><li>Conceptualize (Relate) the problem (Relate): Identify the problem involving the Cartesian coordinate system (abstract object i.e am considering the shape) and the trigonometric function you want to calculate, such as cot(225).</li></ol><ol type="1" id="c80c47aa-e74d-4094-a5e8-df4ade52a7bd" class="numbered-list" start="2"><li>Formulate a hypothesis (Hypothesis): Based on your understanding of trigonometric functions, <strong>hypothesize that you can use reference angles and the ASTC rule to find the value of cot(225).</strong></li></ol><ol type="1" id="828e195d-6ccf-499d-8101-f5ffbb631b3d" class="numbered-list" start="3"><li>Test the hypothesis (Experiment): Perform the following steps to test your hypothesis:
+a. Conceptualize the question.
+b. Take an even reference angle (reference angle are after 180 - …. or like 270 - …..)
+c. Apply the ASTC rule to determine the sign of the trigonometric function in the relevant quadrant. (Note the ASTC rule should be of the question like if in question its cos then you should look for cos not in the anger getting changed)
+d. Calculate the value of the trigonometric function for the reference angle.
+e. Apply the sign based on the quadrant to find the value of the function for the original angle.</li></ol><ol type="1" id="b510f01d-a260-44b4-8f93-789dfed184d9" class="numbered-list" start="4"><li>Analyze the results (Analysis): Check if the steps yield a reasonable and accurate value for cot(225) based on your understanding of trigonometric functions and the Cartesian coordinate system. <strong>(Do rational analysis)</strong></li></ol><ol type="1" id="df4f80c4-a710-460f-94b3-d4ef556ec429" class="numbered-list" start="5"><li>Draw conclusions (Conclusion): <strong>If the steps accurately solve the problem and provide a satisfactory answer, accept your hypothesis </strong>that using reference angles and the ASTC rule is an effective method for calculating trigonometric functions for angles like 225 degrees.</li></ol><p id="56c69be0-9e30-4e0b-b020-2b23e1b4ff66" class="">By using the scientific method, we can systematically approach and solve trigonometric problems involving angles like 225 degrees, leveraging the abstract concept of the Cartesian coordinate system and the principles of reference angles and the ASTC rule.</p><figure id="b11a1e16-32c3-4aa2-a325-bc732cbb3233" class="image"><a href="Trigonometry%20231a450a0a6f4714b07f53d09ed369f4/Screenshot_2023-04-10_at_11.35.29_AM.png"><img style="width:1370px" src="Trigonometry%20231a450a0a6f4714b07f53d09ed369f4/Screenshot_2023-04-10_at_11.35.29_AM.png"/></a></figure><p id="6edc9932-b46c-4820-934f-f364c5e7402c" class="">
+</p><p id="b04ef201-2c10-4e26-b006-152320293abd" class="">
+</p><p id="5e19ad57-9b42-4a32-abb3-4e89a4b7b430" class="">Mediator of this? Abstract object i.e Cartesian </p><p id="34653375-b532-4d5b-b976-5e14857947e4" class="">
+</p><p id="c7b387c7-bd05-4d7c-8828-98fa5e1fdace" class="">
+</p><p id="4b0e0028-8074-4bdc-96e4-b9c1d0472731" class="">I&#x27;ll create a table summarizing the sum-to-product trigonometric identities:</p><table id="d124726d-387e-4edf-a3d8-9cb7e1746f97" class="simple-table"><tbody><tr id="0987acfc-9a65-4075-a31f-47994904ca87"><td id="\P&gt;t" class=""><strong>Identity</strong></td><td id="^~e:" class=""><strong>Formula</strong></td></tr><tr id="ac1967d9-1935-4773-bdf8-fa8f78e825f7"><td id="\P&gt;t" class="">sin(C) + sin(D)</td><td id="^~e:" class="">2 * sin((C + D) / 2) * cos((C - D) / 2)</td></tr><tr id="705ee97c-1aef-4ab5-9a5c-43985d154448"><td id="\P&gt;t" class="">sin(C) - sin(D)</td><td id="^~e:" class="">2 * cos((C + D) / 2) * sin((C - D) / 2)</td></tr><tr id="11f047cd-26d3-4f44-8cf5-0bc32b1c7f93"><td id="\P&gt;t" class="">cos(C) + cos(D)</td><td id="^~e:" class="">2 * cos((C + D) / 2) * cos((C - D) / 2)</td></tr><tr id="5abfdaf4-7e21-4b07-8102-f9cd42c24b37"><td id="\P&gt;t" class="">cos(C) - cos(D)</td><td id="^~e:" class="">-2 * sin((C + D) / 2) * sin((D - C) / 2)</td></tr></tbody></table><p id="35231dda-4543-4f66-90ad-245bae78f930" class="">These identities help convert sums or differences of trigonometric functions into products and are useful for simplifying trigonometric expressions or solving trigonometric equations.</p><p id="f228d938-1e74-4eb9-811d-e29a93b57e14" class="">
+</p><p id="f5c61539-7a11-427e-aeb7-ef5a6795d674" class=""><strong><strong><strong><strong><strong><strong>Derivation</strong></strong></strong></strong></strong></strong></p><p id="79352ee4-2279-4235-a961-a0162b3d40f2" class="">
+</p><p id="958fbcea-b4c6-472c-8675-4eb773d3495e" class="">The sum-to-product trigonometric identities are derived from the angle addition formulas for sine and cosine. These angle addition formulas are based on geometric properties of triangles and circles in the Cartesian coordinate system. Here are the angle addition formulas:</p><p id="01e1824d-8450-402b-9de8-01d1a1dfff48" class="">sin(A + B) = sin(A)cos(B) + cos(A)sin(B)
+cos(A + B) = cos(A)cos(B) - sin(A)sin(B)</p><p id="1dcf8133-995a-4164-9929-bd92b184790a" class="">To derive the sum-to-product identities, you can use these angle addition formulas with appropriate substitutions for A and B. For example, to derive the identity for sin(C) + sin(D), you can set A = (C + D) / 2 and B = (C - D) / 2. Then, substitute these values into the angle addition formula for sine:</p><p id="ec024bd2-2d38-4f74-ac37-0dc1413be0da" class="">sin((C + D) / 2 + (C - D) / 2) = sin((C + D) / 2)cos((C - D) / 2) + cos((C + D) / 2)sin((C - D) / 2)</p><p id="afba8419-f530-4f2b-83e3-e7db9645aa84" class="">Simplifying the left side, you get sin(C), which leads to the identity:</p><p id="37ec6e6b-e4c4-4015-8e41-367e8349db10" class="">sin(C) + sin(D) = 2 * sin((C + D) / 2) * cos((C - D) / 2)</p><p id="4283bedb-1e33-4f6f-a055-ede169f88196" class="">Similar substitutions can be made to derive the other sum-to-product identities</p><p id="fc36b7c4-57a3-40d8-a21c-1e35deacea40" class="">
+</p><p id="71d67861-f6b2-411f-b240-fd03cfa4f5ed" class="">The mediators of this are sin(A + B) = sin(A)cos(B) + cos(A)sin(B)
+cos(A + B) = cos(A)cos(B) - sin(A)sin(B)</p><p id="59ffb731-188f-45b9-9863-3f3d13798905" class="">
+</p><p id="d3308d5e-2a88-4763-91a3-2078997ea59f" class="">Thats why sometime full cos and something full sin and 1st both sin and cos</p><p id="cdcf4769-6ec5-4730-92f5-bc74b802ad52" class="">
+</p><p id="6b55e9a6-b3cb-4681-b1dc-d553b71c222c" class="">The KEY term is called sum to product</p><p id="fa365981-db67-4bb2-950f-2938378bd655" class="">
+</p><p id="f8ca22c8-199c-4636-bb77-908c7e1c38e8" class="">
+</p><p id="1334548a-944f-49fd-aea3-b83e131d708f" class="">In terms of objects and shapes, &quot;sum to product&quot; trigonometry refers to a set of trigonometric identities that involve combining the trigonometric functions of the sum or difference of two angles into a product of trigonometric functions. The shapes involved in these identities are the unit circle and the right triangle, which are used to define the trigonometric functions.</p><p id="703ba1f2-92bf-475d-8c89-944ff9388a1a" class="">In terms of concepts and relations, the &quot;sum to product&quot; identities are used to simplify trigonometric expressions and to prove other trigonometric identities. They are derived from the fundamental trigonometric identities and involve the use of algebraic manipulations and geometric reasoning.</p><p id="9d82f4de-2de2-49e4-850f-194b8705cbac" class="">The &quot;sum to product&quot; identities can also be related to the concept of symmetry in trigonometry. For example, the identity sin(a+b) = sin(a)cos(b) + cos(a)sin(b) demonstrates a symmetry between the sine and cosine functions in the sum of two angles.</p><p id="925eba83-a9a7-453b-a80d-62fdc2f80cc6" class="">Overall, &quot;sum to product&quot; trigonometry involves combining trigonometric functions of the sum or difference of two angles into a product of trigonometric functions. It is used to simplify trigonometric expressions, prove other identities, and demonstrate symmetry between trigonometric functions. The objects and shapes involved include the unit circle and right triangle.</p><p id="60c394db-f8e3-417e-bef6-25fc74e8ad2e" class="">
+</p><p id="72ea54c3-3d04-48ae-a55c-5adeb5acab82" class="">
+</p><p id="fc5302d1-31e9-41db-a9d8-2f9abba34cf5" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Trigonometry for small values </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><p id="402745d8-ae91-4f1b-a48e-8024fc784871" class="">
+</p><p id="684583d9-761e-41da-8adb-0bbbf25ba343" class="">The small angle approximations are based on the idea that for very small angles, the values of sin(x), cos(x), and tan(x) are close to x, 1, and x, respectively.</p><p id="053d093b-788d-46da-aa6f-6bcc2e25e599" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Sin example (Pendulum)</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><p id="2df37306-56d6-4f7b-85c3-fc486909ca67" class="">Sure! Let&#x27;s consider an example where the small angle approximation can be useful. Imagine you&#x27;re dealing with a simple pendulum, a common physics problem. The pendulum consists of a weight suspended from a fixed point by a string of length L, and it oscillates back and forth. When the pendulum is displaced by a small angle θ from the vertical, it experiences a restoring force due to gravity.</p><p id="0910741c-68cf-4a55-aed8-5e1d98acd43c" class="">The equation of motion for the pendulum can be expressed as:</p><p id="940fc31d-d6af-42f4-b945-b92e210322ff" class="">d²θ/dt² + (g/L) * sin(θ) = 0</p><p id="1b1836d8-c7cb-4111-9b43-a6dfcb4fa1a4" class="">where θ is the angular displacement (in radians), g is the acceleration due to gravity, and t is time.</p><p id="d5616b0c-7fb2-43cb-b740-8947ef94c406" class="">When the angular displacement θ is small, the sine function can be approximated by the small angle approximation, which states that sin(θ) ≈ θ for very small angles. Using this approximation, the equation of motion becomes:</p><p id="4e884212-867e-4211-bd4b-7f357b9c6c74" class="">d²θ/dt² + (g/L) * θ = 0</p><p id="150b9e61-f8d1-4806-9467-176e5418793a" class="">This new equation is a linear, second-order ordinary differential equation, which is much easier to solve than the original nonlinear equation. The solution to this linear equation describes the simple harmonic motion of the pendulum for small angular displacements.</p><p id="0b9ed102-ee39-48e4-903a-e35ee217072e" class="">In this example, the small angle approximation allows us to simplify the problem and obtain an analytical solution, making it easier to analyze the pendulum&#x27;s behavior... Can you provide the same example for cos</p><p id="03e435ec-3a70-482e-91c8-af225c24f0f4" class="">
+</p><p id="733eb49e-3d36-4673-9a99-d79398d5fcd3" class="">
+</p><p id="38a38252-7870-49dd-aab0-6424c8bd7abe" class=""><strong><strong><strong><strong><strong><strong>Cos example (Sprin)</strong></strong></strong></strong></strong></strong></p><p id="1d987e81-5f2a-44c0-b701-1ee500a9d3fd" class="">In the simple pendulum example, the small angle approximation for cosine is not directly applicable to the equation of motion. However, I can provide you with a different example where the small angle approximation for cosine is useful.</p><p id="10e73a4c-1b4a-43a6-8842-9283d84e68bc" class="">Consider a situation in physics where a spring is attached to a mass m and is hanging vertically at equilibrium. When the mass is slightly displaced vertically by a small distance x, the spring exerts a restoring force proportional to the displacement. This force can be represented as:</p><p id="991ce0b1-3e7d-42f4-843b-cde467e3bbf6" class="">F = -kx</p><p id="06966b8f-45ea-4398-ba93-f9ba2bcae0fa" class="">where k is the spring constant.</p><p id="2f6440fe-da9a-44ee-9f0a-4e3fc4385980" class="">Now, let&#x27;s say there is an additional force acting on the mass at an angle θ, such as a small horizontal force. The force can be decomposed into two components: one along the spring&#x27;s direction and one perpendicular to it. The component along the spring&#x27;s direction will affect the equilibrium position of the mass.</p><p id="853bd4fc-b6dc-4432-849e-d7a993353e71" class="">The horizontal force can be represented as:</p><p id="e3b9dc8c-fab3-4b6c-9c59-231243caaaa0" class="">F_horizontal = F_total * cos(θ)</p><p id="48d59b6f-428a-4634-b18b-4af4558ab871" class="">Since θ is a small angle, we can use the small angle approximation for cosine:</p><p id="80dfb52b-4370-4996-a0c3-cf0fc982c720" class="">cos(θ) ≈ 1 - (θ^2)/2</p><p id="f5e417c6-87c2-49a4-a3b1-4bec4edbf369" class="">Now, the horizontal force can be written as:</p><p id="a7209ced-9051-47bf-bfd9-8de239951011" class="">F_horizontal ≈ F_total * (1 - (θ^2)/2)</p><p id="b8df67c9-849c-4f79-b190-850d6e917d3c" class="">By using the small angle approximation for cosine, we have simplified the expression for the horizontal force, which can help us analyze the system more easily. However, it is important to remember that the accuracy of the approximation depends on the angle θ being small.</p><p id="ca74cc9c-3ade-40df-a65b-aa02ad5bca67" class="">
+</p><p id="d0e4a297-2e08-4a94-88c6-c43325330de4" class="">
+</p><p id="a74c993c-ec07-4a7e-b0fa-caf954ac79c7" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Tan approximation of small angle in radian</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><p id="880a07bb-026c-4db5-a219-bd2b4e562cd0" class="">
+</p><p id="f5475c5b-f294-4c95-a27e-324e78c1ebe4" class="">Let&#x27;s consider an example from optics where the small angle approximation for tangent can be useful.</p><p id="e0a09e05-c6ae-4ac5-801d-c77baf1a270a" class="">Imagine a thin converging lens with a focal length f. An object is placed at a distance d from the lens, and we want to find the size of the image formed by the lens. The object has a height h, and the image formed by the lens has a height h&#x27;. The distance between the lens and the image is d&#x27;. According to the lens formula:</p><p id="2909f187-8d8e-4c8f-8748-b625857e9433" class="">1/f = 1/d + 1/d&#x27;</p><p id="ca452465-e2a8-49ce-ae6f-1af051667cb7" class="">And the magnification of the lens is given by:</p><p id="fdc5a5fe-a4cf-405d-9f18-e7cbd787f6a8" class="">M = h&#x27;/h = -d&#x27;/d</p><p id="0ebb161f-27f2-46da-9597-1f489be785cd" class="">Now, let&#x27;s say we are interested in the angular size of the object (α) and the angular size of the image (α&#x27;) as seen from the lens. The angular sizes are related to the object&#x27;s height and image height by:</p><p id="f98e6e05-75d7-4651-bb9d-8471b05d9cc1" class="">tan(α) = h/d
+tan(α&#x27;) = h&#x27;/d&#x27;</p><p id="21c3fdca-2788-4701-aa39-d88724bcabca" class="">Since the angular sizes are small, we can use the small angle approximation for tangent:</p><p id="53702cc1-fa06-49c3-a007-8a9b0e433a1c" class="">tan(α) ≈ α
+tan(α&#x27;) ≈ α&#x27;</p><p id="c7ac8aa3-80b8-4879-ba97-4247ccb6e842" class="">Now, the equations become:</p><p id="c3a60212-95eb-4a7c-9bbd-56ef34d95ce0" class="">α = h/d
+α&#x27; = h&#x27;/d&#x27;</p><p id="afcf5772-e8cf-42f9-9c04-96831b7e44bd" class="">We can express h&#x27; in terms of h using the magnification formula:</p><p id="2470eeb9-3f33-4bdd-89bc-65541ac9b8c5" class="">h&#x27; = -Mh = -(d&#x27;/d)h</p><p id="626ec5c8-12b1-4be1-aa6e-29b3659588fc" class="">Substituting this into the equation for α&#x27;:</p><p id="1a260913-152d-46a5-ad78-399ca98c6bde" class="">α&#x27; = -(d&#x27;/d)h/d&#x27;</p><p id="b8ff3bf3-70e1-48e1-a011-2d35faa4b602" class="">Now, we have a relationship between the angular sizes of the object and the image:</p><p id="e0b80cd1-f3c4-4b83-9549-b41aa590f719" class="">α&#x27; = -α(d&#x27;/d)</p><p id="aa5b3f2a-c4b9-4631-b19d-e2a033278a7d" class="">In this example, the small angle approximation for tangent allows us to find a simple relationship between the angular sizes of the object and the image, making it easier to analyze the optical system.</p><p id="840afd86-67f6-49db-8587-505d6fa29e71" class="">
+</p><p id="1f7a756f-e23a-4108-a9fd-43342354348b" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Mediator is Taylor Series</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><p id="a2486f46-07cf-406a-b60d-959cff34eab8" class="">
+</p><p id="0931e47d-9355-4da0-a36f-0cb78c1f3956" class="">
+</p><p id="73b3d894-2b59-406b-899d-5b19f87c6a92" class="">What is taylor series?</p><p id="a77cfd89-4e86-4b97-ac7d-7001ff8c79bc" class="">The Taylor series is a way to understand how different kinds of math problems work, and it can help us find answers to difficult questions. Imagine you&#x27;re a farmer trying to grow crops, but the soil is really hard and dry. You need to make the soil softer and more fertile, so you can grow healthy crops.</p><p id="dc644151-c140-4e0c-9b8a-f1dc99fa91ac" class="">The Taylor series is like a tool that helps you break down the hard, dry soil into smaller, more manageable pieces. You start with the big clumps of soil and break them down into smaller pieces. Then you add water and nutrients to the soil, which helps the plants grow better. With the Taylor series, you can keep breaking down the soil into smaller and smaller pieces until you have just the right amount of soft, fertile soil that the plants need to grow.</p><p id="0b2b69e4-437d-4ac6-9b03-d15998a31d60" class="">In math terms, the Taylor series helps you break down a big, complicated math problem into smaller, more manageable pieces. Each piece helps you understand the problem a little better, and when you put all the pieces together, you can solve the problem. Just like breaking down the soil helps you grow healthy crops, breaking down a math problem with the Taylor series helps you solve it and understand it better.</p><p id="a11ea0cc-838e-4732-a829-061b0cc67b54" class="">
+</p><p id="6b2e724e-7b2e-47bd-84fc-35562ac5db5f" class=""><strong><strong><strong><strong><strong><strong>Angle</strong></strong></strong></strong></strong></strong></p><p id="00e5f5a0-ea49-4304-a35a-0ff4a9760d41" class="">
+</p><p id="98ad40d8-3af9-455f-906e-cb53a09bb670" class="">The small angle approximation is a practical tool for dealing with angles that are close to zero. However, what qualifies as &quot;small&quot; varies depending on the specific situation and the precision you need for the task at hand.</p><p id="b55d1661-c7bb-485a-ae15-5fb08ac5a41d" class="">Typically, if the angle is within the range of about 5 to 10 degrees (0.09 to 0.17 radians), we consider it small enough to use the approximation. The smaller the angle, the better the approximation holds.</p><p id="47c6ae4e-052e-4466-a6b8-f83769067728" class="">It&#x27;s important to understand that the level of precision required for your specific problem will dictate whether the small angle approximation is a suitable choice. If your problem demands greater accuracy, you might need to rely on the full trigonometric functions or include more terms from the Taylor series expansions.</p><p id="41cf7b8d-eb0a-4188-83af-d8ccd5c61f5d" class="">
+</p><p id="c042e9b4-0489-4cb3-8c4d-6034ce2dc968" class=""> (Inside it, trigo file is there)</p><p id="89d70f9e-c052-411c-b56c-8852bf7c65d3" class="">or link</p><p id="32122ac7-b506-4b8d-825a-45c368b58fe5" class="">
+</p><p id="5e7b6068-55db-4040-aff1-5854a8462dfb" class=""><a href="https://www.notion.so/Approximation-18b233a881db49e38d6d4bed5d8d869d">https://www.notion.so/Approximation-18b233a881db49e38d6d4bed5d8d869d?pvs=4#8189b763dfa246cd94c957c89d83494c</a></p><pre id="08f6e9c3-52e0-476b-836f-e25e81800e02" class="code"><code>Inside, Trigo file is there and approximation
+
+doing is there </code></pre><p id="d4800be0-6065-4df2-bb44-0a5921935852" class="">
+</p><p id="9e5cd328-da83-4a7e-bd80-6b91a877f7f9" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Conclusion </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><p id="9a683240-5264-48bf-a1e5-37ee9243b968" class="">
+</p><p id="d9ff24b9-cc81-4022-aefa-5fe1662703ee" class="">Trigonometry, including the cotangent function, is used in physics and engineering to describe waves, oscillations, and forces &amp; motion. To solve problems like cot(225), use reference angles and the ASTC rule within the Cartesian coordinate system. The sum-to-product trigonometric identities simplify expressions and solve equations. These mathematical tools aid in understanding real-world phenomena.</p><p id="d05f6654-99dd-4351-b9e3-441f2bdf2beb" class="">
+</p><p id="41024b1c-af7b-4453-980a-821f36f18ace" class="">Relational activity</p><p id="96798f4b-aed4-4aa1-b2bf-a6689d674a57" class="">
+</p><figure id="2dfa5888-662e-4c42-9e8a-7be3f0d32f56"><div class="source"><a href="https://www.notion.soundefined"></a></div></figure><figure id="41b00ff0-bb93-45d8-b42a-2c39ee913084"><div class="source"><a href="Trigonometry%20231a450a0a6f4714b07f53d09ed369f4/Trigo.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/15a0b780-12c6-452c-b8b3-0b345634b759/Trigo.pdf</a></div><figcaption>Small angle approximation all those for trigonometry like sin 1 degree. Cautions, always take degree in radian. Not in degree. ASTC rules earlier, sign, Quadrant cartesian. C + D sum to product trigonometry ideas.</figcaption></figure><p id="23d2cebd-dfde-4a42-a470-ba00c266d206" class="">
+</p><p id="e3f7f828-adbc-41c3-9391-b3bbeee531d8" class="">
+</p></li></ol></div></article></body></html>
